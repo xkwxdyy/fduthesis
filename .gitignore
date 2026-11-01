@@ -333,3 +333,6 @@ applications/
 !testfiles/support/fudan-emblem-new.pdf
 !testfiles/support/fudan-name.pdf
 !docs/example-image.png
+
+# Keep local-only material excluded after leaving the parent repository.
+/references/

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "topic": "local-material-boundaries",
+  "issues": [],
+  "changes": [
+    {
+      "id": "fduthesis-local-material-boundaries",
+      "type": "fixed",
+      "zh": "将父仓库原有的本地材料忽略边界迁入独立仓库，保留管理台状态、资料和历史归档。",
+      "changelog": false,
+      "announce": false
+    }
+  ]
+}
