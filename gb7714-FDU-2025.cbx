@@ -1,0 +1,25 @@
+%%
+%% gb7714-FDU-2025.cbx --- FDU citation overlay for GB/T 7714-2025
+%%
+\ProvidesFile{gb7714-FDU-2025.cbx}
+  [2026/08/22 v0.1 citation style for fduthesis]
+
+\RequireCitationStyle{gb7714-2025}
+
+\DeclareCiteCommand{\parencite}
+  {\mkbibleftborder\usebibmacro{cite:init}%
+   \usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}%
+  {}
+  {\usebibmacro{cite:dump}\setunit{\addcomma\addspace}%
+   \printfield{postnote}\mkbibrightborder}
+
+\DeclareCiteCommand{\cite}[\mkbibsuperscript]
+  {\mkbibleftborder\usebibmacro{cite:init}%
+   \usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}%
+  {}
+  {\usebibmacro{cite:dump}\setunit{\addcomma\addspace}%
+   \printfield{postnote}\mkbibrightborder}

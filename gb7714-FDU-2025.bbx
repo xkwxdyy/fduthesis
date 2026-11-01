@@ -1,0 +1,48 @@
+%%
+%% gb7714-FDU-2025.bbx --- FDU overlay for GB/T 7714-2025
+%%
+\ProvidesFile{gb7714-FDU-2025.bbx}
+  [2026/08/22 v0.1 bibliography style for fduthesis]
+
+% Keep the FDU-specific options in a small overlay.  The actual entry
+% drivers, including the new 2025 entry types, come from the maintained
+% biblatex-gb7714-2015 package shipped by current TeX Live releases.
+\RequireBibliographyStyle{gb7714-2025}
+
+% biblatex does not provide a core `preprint` driver on all releases;
+% GB/T 7714-2025 treats it as a distinct type, so use the online driver
+% until the upstream style supplies a dedicated one.
+\DeclareBibliographyAlias{preprint}{online}
+
+\ExecuteBibliographyOptions{
+  gbpunctin    = false,
+  gbfieldtype  = true,
+  sorting      = nty,
+  gbalign      = right,
+  gbnamefmt    = givenahead,
+  gbstrict     = false,
+}
+
+\newtoggle{bbx:gbfile}
+\DeclareBibliographyOption{gbfile}[false]{%
+  \settoggle{bbx:gbfile}{#1}}
+\ExecuteBibliographyOptions{gbfile}
+
+\DeclareFieldFormat{file}{\href{#1}{\color{red}$\blacktriangleright$ Open File.}}
+\renewbibmacro*{annotation}{%
+  \iftoggle{bbx:gbannote}%
+    {\iffieldundef{annotation}%
+       {\printfile[annotation]{\bibannotationprefix\thefield{entrykey}.tex}}%
+       {\printfield{annotation}}}%
+    {}%
+  \iftoggle{bbx:gbfile}{%
+    \iffieldundef{file}{}{\printfield{file}}}{}%
+  }
+
+\renewbibmacro*{series+number}{%
+  \printfield{series}%
+  \setunit*{\addcolon\addspace}%
+  \printfield{number}%
+  \newunit%
+}
+\AtEveryBibitem{\clearlist{language}}

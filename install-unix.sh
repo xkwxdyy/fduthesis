@@ -3,12 +3,14 @@
 mkdir -p "thesis"
 cd "thesis"
 
-cp -f "../docs/main.tex"                          .
-cp -f "../docs/main.bib"                          .
+cp -f "../templates/main.tex"                          .
+cp -f "../templates/main.bib"                          .
 cp -f "../docs/example-image.png"                 .
 cp -f "../source/fduthesis.dtx"                   .
 cp -f "../source/fduthesis-doc.dtx"               .
 cp -f "../source/fduthesis-logo.dtx"              .
+cp -f "../source/fduthesis-math.dtx" .
+cp -f "../gb7714-FDU-2025.bbx" "../gb7714-FDU-2025.cbx" .
 cp -f "../testfiles/support/fudan-emblem.pdf"     .
 cp -f "../testfiles/support/fudan-emblem-new.pdf" .
 cp -f "../testfiles/support/fudan-name.pdf"       .

@@ -12,6 +12,6 @@ $show_time = 1;
 # Process glossary (change history).
 add_cus_dep('glo', 'gls', 0, 'makeglo2gls');
 sub makeglo2gls {
-    system("makeindex -s gglo.ist -o \"$_[0].gls\" \\
-        -t \"$_[0].glg\" \"$_[0].glo\"");
+    system('makeindex', '-s', 'gglo.ist', '-o', "$_[0].gls",
+        '-t', "$_[0].glg", "$_[0].glo");
 }

@@ -3,12 +3,15 @@
 MKDIR "thesis"
 CD    "thesis"
 
-COPY /Y "..\docs\main.tex"                          .
-COPY /Y "..\docs\main.bib"                          .
+COPY /Y "..\templates\main.tex"                          .
+COPY /Y "..\templates\main.bib"                          .
 COPY /Y "..\docs\example-image.png"                 .
 COPY /Y "..\source\fduthesis.dtx"                   .
 COPY /Y "..\source\fduthesis-doc.dtx"               .
 COPY /Y "..\source\fduthesis-logo.dtx"              .
+COPY /Y "..\source\fduthesis-math.dtx" .
+COPY /Y "..\gb7714-FDU-2025.bbx" .
+COPY /Y "..\gb7714-FDU-2025.cbx" .
 COPY /Y "..\testfiles\support\fudan-emblem.pdf"     .
 COPY /Y "..\testfiles\support\fudan-emblem-new.pdf" .
 COPY /Y "..\testfiles\support\fudan-name.pdf"       .
